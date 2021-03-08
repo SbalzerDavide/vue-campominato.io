@@ -99,3 +99,19 @@ h1{
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@media screen and (max-width: 768px){
+    h1{
+        color:red;
+    }
+    .field{
+        width: 400px;
+    }
+
+    .box{
+        width: 39.4px;
+        height: 39.4px;
+    }
+}
+
+
