@@ -11,6 +11,7 @@ const app = new Vue ({
         win: false,
         second: 0,
         time: '',
+        audio: true,
 
 
     },

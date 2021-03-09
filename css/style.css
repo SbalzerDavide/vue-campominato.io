@@ -136,6 +136,12 @@ h1{
     background-position: center;
 }
 
+.volume{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 @media screen and (max-width: 768px){
     h1{
         color:red;

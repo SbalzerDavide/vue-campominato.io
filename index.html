@@ -7,6 +7,8 @@
     <!-- font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <!-- style -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- vue develop -->
@@ -36,7 +38,12 @@
             <div class="field">
                 <div v-for="(box, index) in boxes" :id="index" class="box" :class="box.style" @click="selectBox(index)">
                     <!-- <div v-if="box.clicked == false">{{index}}</div> -->
-                    <div v-if="box.clicked">{{box.number}}</div>
+                    <div v-if="box.clicked">
+                        <audio v-if="audio" autoplay>
+                            <source src="./audio/click.mp3" type="audio/mpeg">
+                        </audio>        
+                        {{box.number}}
+                    </div>
                     
                 </div>
             </div>
@@ -48,8 +55,8 @@
 
         <div v-if="gameover" class="finish">
             <div class="text">
-                <audio autoplay>
-                    <source src="Gameover.m4a" type="audio/mpeg">
+                <audio v-if="audio" autoplay>
+                    <source src="./audio/game-over.mp3" type="audio/mpeg">
                 </audio>
                 GAMEOVER
             </div>
@@ -63,6 +70,10 @@
         <div v-if="win" class="win">
             Congratulaion <br>
             You Won in {{second}} second!!!
+        </div>
+        <div class="volume" @click="audio = !audio">
+            <i v-if="audio" class="fas fa-volume-up"></i>
+            <i v-else class="fas fa-volume-mute"></i>
         </div>
 
         
