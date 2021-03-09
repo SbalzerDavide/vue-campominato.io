@@ -72,8 +72,12 @@
             You Won in {{second}} second!!!
         </div>
         <div class="volume" @click="audio = !audio">
-            <i v-if="audio" class="fas fa-volume-up"></i>
-            <i v-else class="fas fa-volume-mute"></i>
+            <div v-if="audio" class="on">
+                <i class="fas fa-volume-up"></i>
+            </div>
+            <div v-else class="off">
+                <i class="fas fa-volume-mute"></i>
+            </div>
         </div>
 
         

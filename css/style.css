@@ -143,6 +143,24 @@ h1{
     left: 0;
 }
 
+.volume .on{
+    /* width: 100%;
+    height: 100%; */
+    padding: 5px;
+    background: chartreuse;
+    border: 1px solid black;
+}
+
+.volume .off{
+    /* width: 100%;
+    height: 100%; */
+    padding: 5px;
+    background: red;
+    border: 1px solid black;
+}
+
+
+
 @media screen and (max-width: 768px){
     h1{
         color:red;
