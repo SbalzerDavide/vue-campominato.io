@@ -71,6 +71,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
 }
 
@@ -145,6 +146,21 @@ h1{
     .box{
         width: 34.4px;
         height: 34.4px;
+    }
+
+    .new{
+        border: 2px solid black;
+    }
+
+    .action .time,
+    .action .timer{
+        width: 80%;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    .finish{
+        font-size: 18px;
     }
 }
 
