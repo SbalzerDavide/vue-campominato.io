@@ -392,6 +392,7 @@ const app = new Vue ({
             this.createBombs();
             this.gameover = false;
             this.second = 0;
+            this.timer();
         }
     }
 });
