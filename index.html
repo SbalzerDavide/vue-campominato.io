@@ -50,6 +50,15 @@
             <!-- <audio autoplay>
                 <source src="Gameover.m4a" type="audio/mpeg">
             </audio>  -->
+            <div class="volume" @click="audio = !audio">
+                <div v-if="audio" class="on">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <div v-else class="off">
+                    <i class="fas fa-volume-mute"></i>
+                </div>
+            </div>
+    
 
         </div>
 
@@ -70,14 +79,6 @@
         <div v-if="win" class="win">
             Congratulaion <br>
             You Won in {{second}} second!!!
-        </div>
-        <div class="volume" @click="audio = !audio">
-            <div v-if="audio" class="on">
-                <i class="fas fa-volume-up"></i>
-            </div>
-            <div v-else class="off">
-                <i class="fas fa-volume-mute"></i>
-            </div>
         </div>
 
         
