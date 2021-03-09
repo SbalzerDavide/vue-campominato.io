@@ -65,6 +65,261 @@ const app = new Vue ({
                     this.boxes[id].style = 'flower';
                     this.point ++;
                     console.log(this.point);
+                    // make number 
+                    if (id == 0 ){
+                        if (this.boxes[id+1].bomb === true){
+                            this.boxes[id].number ++;
+                        } else {
+                            this.boxes[id+1].clicked = true;
+                            this.boxes[id+1].style = 'flower';
+                        };
+                        if (this.boxes[id+10].bomb === true){
+                            this.boxes[id].number ++;
+                        } else {
+                            this.boxes[id+10].clicked = true;
+                            this.boxes[id+10].style = 'flower';
+                        };
+                        if (this.boxes[id+11].bomb === true){
+                            this.boxes[id].number ++;
+                        } else {
+                            this.boxes[id+11].clicked = true;
+                            this.boxes[id+11].style = 'flower';
+                        }; 
+                    }else if( id == 9){
+                        if (this.boxes[id-1].bomb === true){
+                            this.boxes[id].number ++;
+                        } else {
+                            this.boxes[id-1].clicked = true;
+                            this.boxes[id-1].style = 'flower';
+                        };
+                        if (this.boxes[id+9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+9].clicked = true;
+                            this.boxes[id+9].style = 'flower';
+                        };
+                        if (this.boxes[id+10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+10].clicked = true;
+                            this.boxes[id+10].style = 'flower';
+                        }; 
+                    } else if (id == 90) {
+                        if (this.boxes[id+1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+1].clicked = true;
+                            this.boxes[id+1].style = 'flower';
+                        };
+                        if (this.boxes[id-10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-10].clicked = true;
+                            this.boxes[id-10].style = 'flower';
+                        };
+                        if (this.boxes[id-9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-9].clicked = true;
+                            this.boxes[id-9].style = 'flower';
+                        }; 
+                    } else if( id == 99){
+                        if (this.boxes[id-1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-1].clicked = true;
+                            this.boxes[id-1].style = 'flower';
+                        };
+                        if (this.boxes[id-10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-10].clicked = true;
+                            this.boxes[id-10].style = 'flower';
+                        };
+                        if (this.boxes[id-11].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-11].clicked = true;
+                            this.boxes[id-11].style = 'flower';
+                        }; 
+                    }else if (id < 10){
+                        if (this.boxes[id-1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-1].clicked = true;
+                            this.boxes[id-1].style = 'flower';
+                        };
+                        if (this.boxes[id+1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+1].clicked = true;
+                            this.boxes[id+1].style = 'flower';
+                        };
+                        if (this.boxes[id+9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+9].clicked = true;
+                            this.boxes[id+9].style = 'flower';
+                        };
+                        if (this.boxes[id+10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+10].clicked = true;
+                            this.boxes[id+10].style = 'flower';
+                        };
+                        if (this.boxes[id+11].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+11].clicked = true;
+                            this.boxes[id+11].style = 'flower';
+                        };    
+                    } else if(Number.isInteger(id/10)){
+                        if (this.boxes[id-10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-10].clicked = true;
+                            this.boxes[id-10].style = 'flower';
+                        };
+                        if (this.boxes[id-9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-9].clicked = true;
+                            this.boxes[id-9].style = 'flower';
+                        };
+                        if (this.boxes[id+1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+1].clicked = true;
+                            this.boxes[id+1].style = 'flower';
+                        };
+                        if (this.boxes[id+10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+10].clicked = true;
+                            this.boxes[id+10].style = 'flower';
+                        };
+                        if (this.boxes[id+11].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+11].clicked = true;
+                            this.boxes[id+11].style = 'flower';
+                        };
+                        console.log('multiplo di 10')
+                    } else if(Number.isInteger((id +1)/10)){
+                        if (this.boxes[id-11].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-11].clicked = true;
+                            this.boxes[id-11].style = 'flower';
+                        };
+                        if (this.boxes[id-10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-10].clicked = true;
+                            this.boxes[id-10].style = 'flower';
+                        };
+                        if (this.boxes[id-1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-1].clicked = true;
+                            this.boxes[id-1].style = 'flower';
+                        };
+                        if (this.boxes[id+9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+9].clicked = true;
+                            this.boxes[id+9].style = 'flower';
+                        };
+                        if (this.boxes[id+10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+10].clicked = true;
+                            this.boxes[id+10].style = 'flower';
+                        };    
+                        console.log('9');
+                    } else if (id > 89){
+                        if (this.boxes[id-11].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-11].clicked = true;
+                            this.boxes[id-11].style = 'flower';
+                        };
+                        if (this.boxes[id-10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-10].clicked = true;
+                            this.boxes[id-10].style = 'flower';
+                        };
+                        if (this.boxes[id-9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-9].clicked = true;
+                            this.boxes[id-9].style = 'flower';
+                        };
+                        if (this.boxes[id-1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-1].clicked = true;
+                            this.boxes[id-1].style = 'flower';
+                        };
+                        if (this.boxes[id+1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+1].clicked = true;
+                            this.boxes[id+1].style = 'flower';
+                        };
+                    } else {
+                        if (this.boxes[id-11].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-11].clicked = true;
+                            this.boxes[id-11].style = 'flower';
+                        };
+                        if (this.boxes[id-10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-10].clicked = true;
+                            this.boxes[id-10].style = 'flower';
+                        };
+                        if (this.boxes[id-9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-9].clicked = true;
+                            this.boxes[id-9].style = 'flower';
+                        };
+                        if (this.boxes[id-1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id-1].clicked = true;
+                            this.boxes[id-1].style = 'flower';
+                        };
+                        if (this.boxes[id+1].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+1].clicked = true;
+                            this.boxes[id+1].style = 'flower';
+                        };
+                        if (this.boxes[id+9].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+9].clicked = true;
+                            this.boxes[id+9].style = 'flower';
+                        };
+                        if (this.boxes[id+10].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+10].clicked = true;
+                            this.boxes[id+10].style = 'flower';
+                        };
+                        if (this.boxes[id+11].bomb === true){
+                            this.boxes[id].number ++;
+                        }else {
+                            this.boxes[id+11].clicked = true;
+                            this.boxes[id+11].style = 'flower';
+                        };
+    
+                    }
+    
                 } else {
                     this.boxes[id].style = 'bomb';
                     this.gameover = true;
@@ -81,140 +336,6 @@ const app = new Vue ({
 
                 // };
 
-                // make number 
-                if (id == 0 ){
-                    if (this.boxes[id+1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+11].bomb === true){
-                        this.boxes[id].number ++;
-                    }; 
-                }else if( id == 9){
-                    if (this.boxes[id-1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+9].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+10].bomb === true){
-                        this.boxes[id].number ++;
-                    }; 
-                } else if (id == 90) {
-                    if (this.boxes[id+1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-9].bomb === true){
-                        this.boxes[id].number ++;
-                    }; 
-                } else if( id == 99){
-                    if (this.boxes[id-1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-11].bomb === true){
-                        this.boxes[id].number ++;
-                    }; 
-                }else if (id < 10){
-                    if (this.boxes[id-1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+9].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+11].bomb === true){
-                        this.boxes[id].number ++;
-                    };    
-                } else if(Number.isInteger(id/10)){
-                    if (this.boxes[id-10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-9].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+11].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    console.log('multiplo di 10')
-                } else if(Number.isInteger((id +1)/10)){
-                    if (this.boxes[id-11].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+9].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+10].bomb === true){
-                        this.boxes[id].number ++;
-                    };    
-                    console.log('9');
-                } else if (id > 89){
-                    if (this.boxes[id-11].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-9].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                } else {
-                    if (this.boxes[id-11].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-9].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id-1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+1].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+9].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+10].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-                    if (this.boxes[id+11].bomb === true){
-                        this.boxes[id].number ++;
-                    };
-
-                }
                 console.log(this.boxes[id])
             }
         },
