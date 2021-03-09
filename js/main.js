@@ -8,6 +8,9 @@ const app = new Vue ({
         level: 0,
         point: 0,
         gameover: false,
+        win: false,
+        second: 0,
+        time: '',
 
 
     },
@@ -15,6 +18,7 @@ const app = new Vue ({
         this.field();
         console.log(this.boxes);
         this.createBombs();
+        this.timer();
         console.log(this.bombs);
         console.log(this.boxes);
     },
@@ -45,6 +49,12 @@ const app = new Vue ({
                 }
             }
         },
+        timer(){
+            this.time = setInterval(this.addSecond, 1000)
+        },
+        addSecond(){
+            this.second ++;
+        },
         selectBox(id){
             if(!this.boxes[id].clicked){
                 this.boxes[id].clicked = true;
@@ -56,9 +66,20 @@ const app = new Vue ({
                     console.log(this.point);
                 } else {
                     this.boxes[id].style = 'bomb';
-                    console.log('game over');
                     this.gameover = true;
+                    clearInterval(this.time)
                 };
+                if(this.point == (this.boxNumber - this.bombsNumber)){
+                    this.win = true;
+                    clearInterval(this.time)
+                };
+                //fake victory for develop
+                // if(this.point == 3){
+                //     this.win = true;
+                //     clearInterval(this.time)
+
+                // };
+
                 // make number 
                 if (id == 0 ){
                     if (this.boxes[id+1].bomb === true){
@@ -203,6 +224,7 @@ const app = new Vue ({
             this.field();
             this.createBombs();
             this.gameover = false;
+            this.second = 0;
         }
     }
 });

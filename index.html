@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- style -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- vue develop -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -15,37 +19,50 @@
 </head>
 <body>
     <div id="app">
-        <div :class="gameover ? 'blurred' : '' ">
+        <div :class="gameover || win ? 'blurred' : '' ">
             <!-- <div v-if="gameover" class="finish">
                 <div class="text">
                     GAMEOVER
                 </div>
             </div> -->
-            <h1>campo minato</h1>
+            <h1>minefield</h1>
+            <div class="new" @click="restart">
+                new match
+            </div>
             <div class="action">
-                <div class="new" @click="restart">
-                    new match
-                </div>
-                <div class="point">{{point}}</div>
-
+                <div class="point">points: {{ point }}</div>
+                <div class="timer">time: {{ second }}</div>
             </div>
             <div class="field">
                 <div v-for="(box, index) in boxes" :id="index" class="box" :class="box.style" @click="selectBox(index)">
-                    <div v-if="box.clicked == false">{{index}}</div>
-                    <div v-else>{{box.number}}</div>
+                    <!-- <div v-if="box.clicked == false">{{index}}</div> -->
+                    <div v-if="box.clicked">{{box.number}}</div>
                     
                 </div>
             </div>
+            <!-- <audio autoplay>
+                <source src="Gameover.m4a" type="audio/mpeg">
+            </audio>  -->
 
         </div>
 
         <div v-if="gameover" class="finish">
             <div class="text">
+                <audio autoplay>
+                    <source src="Gameover.m4a" type="audio/mpeg">
+                </audio>
                 GAMEOVER
+            </div>
+            <div class="text">
+                Points: {{ point }}
             </div>
             <div class="restart" @click="restart">
                 TRY AGAIN
             </div>
+        </div>
+        <div v-if="win" class="win">
+            Congratulaion <br>
+            You Won in {{second}} second!!!
         </div>
 
         
