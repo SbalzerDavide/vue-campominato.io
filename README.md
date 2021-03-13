@@ -2,6 +2,6 @@
 
 
 
-Click [here](https://github.com/SbalzerDavide/vue-campominato.io.git) for show live version!
+Click [here](https://sbalzerdavide.github.io/vue-campominato.io/) for show live version!
 
 ![Screenshot](./screenshot-minefield1.png)
